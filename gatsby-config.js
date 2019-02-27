@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `kirankumarambati`,
+    title: `Kirankumar Ambati`,
     author: `Kirankumar Ambati`,
     description: `Kiran writes his learnings out here`,
     siteUrl: `https://kirankumarambati.me/blog`,

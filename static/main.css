@@ -9,15 +9,3 @@
     background-color: white;
     color: black!important;
 }
-
-.layout-css {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-@media(max-width: 762px) {
-    .layout-css {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
