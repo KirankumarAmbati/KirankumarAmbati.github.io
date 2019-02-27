@@ -1,0 +1,11 @@
+.link {
+    box-shadow: none;
+    text-decoration: none;
+    color: white;
+    padding: 1%;
+}
+
+.link:hover, .active-class {
+    background-color: white;
+    color: black!important;
+}
