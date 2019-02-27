@@ -4,14 +4,13 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Portfolio from "./portfolio"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+class ICanNotReact extends React.Component {
   render() {
-
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -23,13 +22,13 @@ class BlogIndex extends React.Component {
           `portfolio`, `reactjs`, `ui`, `ux`, `node`, `nodejs`, `expressjs`
         ]}
         />
-        <Portfolio />
+        <p>Online Version of <span style={{textTransform: "uppercase", fontWeight: "bold", fontSize: "1.5rem"}}>I Can Not React</span> Book. Check it out <a href="https://github.com/KirankumarAmbati/I-can-not-REACT" target="_blank">here</a>.</p>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default ICanNotReact
 
 export const pageQuery = graphql`
   query {
@@ -54,3 +53,4 @@ export const pageQuery = graphql`
     }
   }
 `
+

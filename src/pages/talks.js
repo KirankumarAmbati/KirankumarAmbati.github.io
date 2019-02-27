@@ -4,14 +4,13 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Portfolio from "./portfolio"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+class Talks extends React.Component {
   render() {
-
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -23,13 +22,13 @@ class BlogIndex extends React.Component {
           `portfolio`, `reactjs`, `ui`, `ux`, `node`, `nodejs`, `expressjs`
         ]}
         />
-        <Portfolio />
+        <p>Interesting talks are on their way. Stay tuned!</p>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default Talks
 
 export const pageQuery = graphql`
   query {
@@ -54,3 +53,4 @@ export const pageQuery = graphql`
     }
   }
 `
+
