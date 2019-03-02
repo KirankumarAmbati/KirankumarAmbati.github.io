@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Kirankumar Ambati`,
+    title: `@kirankumarambati`,
     author: `Kirankumar Ambati`,
     description: `Kiran writes his learnings out here`,
-    siteUrl: `https://kirankumarambati.me/blog`,
+    siteUrl: `https://kirankumarambati.me/`,
     social: {
       twitter: `_sudo_user`,
       linkedin:`ambatikirankumar`,
