@@ -6,7 +6,7 @@ function TypeWrite({strings, startDelay, onComplete}) {
     <div style={{fontSize: "1.1rem", lineHeight: "2.6rem"}}>
         <Typed
           strings={strings}
-          typeSpeed={50}
+          typeSpeed={40}
           smartBackspace
           startDelay = {startDelay}
           showCursor={false}

@@ -6,10 +6,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Portfolio from "./portfolio"
 import { rhythm } from "../utils/typography"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab, faFacebookF, faGooglePlusG, faLinkedinIn, faRedditAlien, faWhatsapp, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fab, faFacebookF, faGooglePlusG, faLinkedinIn, faRedditAlien, faWhatsapp, faTwitter)
 
 class BlogIndex extends React.Component {
   render() {
-
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
 

@@ -4,16 +4,17 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Share from "../components/ShareComponent"
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const {title} = this.props.data.site.siteMetadata
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={title}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
@@ -42,7 +43,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{marginTop: 0}}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -53,6 +54,16 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
+        <Share
+          socialConfig={{
+            twitterHandle: this.props.data.site.siteMetadata.social.twitter,
+            config: {
+              url: `${this.props.data.site.siteMetadata.siteUrl}${this.props.location.pathname}`,
+              title: post.frontmatter.title,
+            },
+          }}
+          tags={post.frontmatter.tags}
+        />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -98,6 +109,10 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
+        social {
+          twitter
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -107,6 +122,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

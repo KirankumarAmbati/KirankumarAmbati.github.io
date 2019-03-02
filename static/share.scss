@@ -1,0 +1,58 @@
+$brand-colors: (
+	facebook: #3b5998,
+	twitter: #1da1f2,
+	googleplus: #dd4b39,
+	linkedin: #0077b5,
+	reddit: #ff4500,
+	whatsapp: #128c7e,
+);
+
+.post-social {
+	.button {
+		margin: 0.5rem 0.25rem;
+		border-radius: 290486px;
+		cursor: pointer;
+		@each $class, $color in $brand-colors {
+			&.#{$class} {
+				color: $color;
+				border-color: $color;
+				display: inline;
+				&:hover {
+					background-color: $color;
+					border-color: $color;
+					color: #fff;
+				}
+			}
+		}
+	}
+	margin-bottom: 3%
+}
+
+.icon {
+	margin-right: 1%;
+}
+
+@media(max-width:762px) {
+	.text {
+		display: none
+	}
+}
+
+@media(min-width:762px) {
+	.button {
+		border: 1px solid;
+		padding-left: 1rem;
+		padding-right: 1rem
+	}
+}
+
+@media(max-width:762px) {
+	.button {
+		padding-right: 0.5rem;
+	}
+
+	.post-social {
+		margin-bottom: 5%;
+	}
+}
+

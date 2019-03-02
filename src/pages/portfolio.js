@@ -40,23 +40,23 @@ class Portfolio extends React.Component {
                 />
                 <TypeWrite
                   strings={["So, let me introduce myself."]}
-                  startDelay = {6500}
+                  startDelay = {5500}
                 />
                 <TypeWrite
                   strings={["I'm Kirankumar Ambati from India."]}
-                  startDelay = {9000}
+                  startDelay = {8000}
                 />
                 <TypeWrite
                   strings={["Frontend + React is my LOVE"]}
-                  startDelay = {12000}
+                  startDelay = {11000}
                 />
                 <TypeWrite
                   strings={["Teaching is my passion."]}
-                  startDelay = {15000}
+                  startDelay = {14000}
                 />
                 <TypeWrite
-                  strings={["wanna know more about me or get in touch with me ? "]}
-                  startDelay = {17000}
+                  strings={["Want to know more about me or get in touch with me ? "]}
+                  startDelay = {16000}
                   onComplete={() => this.setState({typingFinished: true})}
                 />
                 {
