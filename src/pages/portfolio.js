@@ -7,7 +7,7 @@ import Subscribe from "../components/Subscribe";
 
 class Portfolio extends React.Component {
   state = {
-    typingFinished: false
+    showSocialIcons: false
   }
   render() {
     return (
@@ -55,10 +55,10 @@ class Portfolio extends React.Component {
                 <TypeWrite
                   strings={["Want to know more about me or get in touch with me ? "]}
                   startDelay = {16000}
-                  onComplete={() => this.setState({typingFinished: true})}
+                  onComplete={() => this.setState({showSocialIcons: true})}
                 />
                 {
-                  this.state.typingFinished && (
+                  this.state.showSocialIcons && (
                     <p>
                       <SocialIcon url={`https://github.com/${social.github}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
                       <SocialIcon url={`https://www.linkedin.com/in/${social.linkedin}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
