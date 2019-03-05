@@ -23,7 +23,7 @@ class Subscribe extends Component {
                     this.state.response.result == '' && (
                         <TypeWrite
                             strings={["Be the first one to be notified when I write a new article. "]}
-                            startDelay = {18000}
+                            startDelay = {20000}
                             onComplete={() => this.setState({showSubscribe: true})}
                         />
                     )
