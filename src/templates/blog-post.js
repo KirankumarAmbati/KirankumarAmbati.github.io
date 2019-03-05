@@ -28,17 +28,17 @@ class BlogPostTemplate extends React.Component {
             padding: 0,
           }}
         >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+        <li>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                ← {next.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                {previous.frontmatter.title} →
               </Link>
             )}
           </li>
@@ -58,7 +58,7 @@ class BlogPostTemplate extends React.Component {
           socialConfig={{
             twitterHandle: this.props.data.site.siteMetadata.social.twitter,
             config: {
-              url: `${this.props.data.site.siteMetadata.siteUrl}${this.props.location.pathname}`,
+              url: `${this.props.data.site.siteMetadata.siteUrl}${this.props.location.pathname.slice(1)}`,
               title: post.frontmatter.title,
             },
           }}
@@ -82,16 +82,16 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                ← {next.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                {previous.frontmatter.title} →
               </Link>
             )}
           </li>

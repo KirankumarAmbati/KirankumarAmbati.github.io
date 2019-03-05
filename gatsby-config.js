@@ -26,6 +26,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: 'https://kirankumarambati.us20.list-manage.com/subscribe/post?u=6d09a49010f319bde97171cd0&amp;id=e2cb889d72'
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

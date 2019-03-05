@@ -1,11 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
-import Layout from "../components/layout"
 import TypeWrite from '../components/typeWrite'
 import { StaticQuery, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
 import { SocialIcon } from 'react-social-icons';
-import pose from 'react-pose'
+import Subscribe from "../components/Subscribe";
 
 class Portfolio extends React.Component {
   state = {
@@ -68,6 +66,7 @@ class Portfolio extends React.Component {
                   </p>
                   )
                 }
+                <Subscribe />
               </div>
             </div>
           )

@@ -18,9 +18,7 @@ $brand-colors: (
 				border-color: $color;
 				display: inline;
 				&:hover {
-					background-color: $color;
 					border-color: $color;
-					color: #fff;
 				}
 			}
 		}
@@ -44,6 +42,18 @@ $brand-colors: (
 		padding-left: 1rem;
 		padding-right: 1rem
 	}
+	.post-social {
+		.button {
+			@each $class, $color in $brand-colors {
+				&.#{$class} {
+					&:hover {
+						background-color: $color;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}	
 }
 
 @media(max-width:762px) {

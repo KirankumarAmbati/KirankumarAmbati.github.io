@@ -108,3 +108,24 @@
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+
+  .subscribe-email {
+    display: block;
+    margin-bottom: 5%
+  }
+
+  .subscribe-button {
+    padding-right: 5%;
+    padding-left: 5%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+
+  .subscribe-button:hover {
+    background-color: black;
+    color: white;
+  }
