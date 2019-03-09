@@ -36,8 +36,8 @@ class Layout extends React.Component {
           </Link>
           <Link className="link" activeClassName="active-class" to={`/`}>home</Link>
           <Link className="link" activeClassName="active-class" to={`/blog`}>blog</Link>
-          {/* <Link className="link" activeClassName="active-class" to={`/talks`}>talks</Link> */}
-          {/* <Link className="link" activeClassName="active-class" to={`/i-can-not-react`}>i-can-not-react</Link> */}
+          <Link className="link" activeClassName="active-class" to={`/talks`}>talks</Link>
+          <a className="link" href="https://i-can-not-react.netlify.com/">i-can-not-react</a>
         </h3>
       </div>
     )
@@ -47,11 +47,10 @@ class Layout extends React.Component {
           <header>{header}</header>
         </div>
         <div
+          className="main"
           style={{
-            marginLeft: `10%`,
-            marginRight: `10%`,
             maxWidth: rhythm(32),
-            padding: `0 ${rhythm(3 / 4)}`,
+            padding: `0 ${rhythm(3 / 4)}`
           }}
         >
           <main style={{minHeight: "calc(100vh - 220px)"}}>{children}</main>

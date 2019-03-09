@@ -1,11 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { DiscussionEmbed } from 'disqus-react'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Share from "../components/ShareComponent"
 import { rhythm, scale } from "../utils/typography"
+import Subscribe from '../components/Subscribe'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -31,14 +33,14 @@ class BlogPostTemplate extends React.Component {
         <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                ← {next.frontmatter.title}
+                ← <span>{next.frontmatter.title}</span>
               </Link>
             )}
           </li>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                {previous.frontmatter.title} →
+                <span>{previous.frontmatter.title}</span> →
               </Link>
             )}
           </li>
@@ -70,7 +72,9 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
+
         <Bio />
+        <Subscribe typedNeeded={false}/>
 
         <ul
           style={{
@@ -84,18 +88,20 @@ class BlogPostTemplate extends React.Component {
           <li>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                ← {next.frontmatter.title}
+                ← <span>{next.frontmatter.title}</span>
               </Link>
             )}
           </li>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                {previous.frontmatter.title} →
+                <span>{previous.frontmatter.title}</span> →
               </Link>
             )}
           </li>
         </ul>
+
+        <DiscussionEmbed shortname="kirankumarambati" config={{identifier: post.id, title: post.frontmatter.title}} />
       </Layout>
     )
   }

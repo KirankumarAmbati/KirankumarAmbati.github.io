@@ -2,13 +2,27 @@ import React from "react"
 import TypeWrite from '../components/typeWrite'
 import { StaticQuery, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from 'react-social-icons'
+import addToMailChimp from 'gatsby-plugin-mailchimp'
 import Subscribe from "../components/Subscribe";
 
 class Portfolio extends React.Component {
   state = {
+    email: '',
+    response: {
+        result: '',
+        msg: ''
+    },
+    showSubscribe: false,
     showSocialIcons: false
   }
+
+  onSubmit = () => {
+    addToMailChimp(this.state.email)
+    .then(data => this.setState({response: data}))
+  }
+
+
   render() {
     return (
       <StaticQuery
@@ -59,14 +73,16 @@ class Portfolio extends React.Component {
                 />
                 {
                   this.state.showSocialIcons && (
-                    <p>
+                    <div>
                       <SocialIcon url={`https://github.com/${social.github}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
                       <SocialIcon url={`https://www.linkedin.com/in/${social.linkedin}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
                       <SocialIcon url={`https://twitter.com/${social.twitter}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
-                  </p>
+                  </div>
                   )
                 }
-                <Subscribe />
+                <div>
+                  { this.state.showSubscribe && <Subscribe typedNeeded={true}/> }
+                </div>
               </div>
             </div>
           )

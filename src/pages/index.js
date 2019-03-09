@@ -11,7 +11,7 @@ import { fab, faFacebookF, faGooglePlusG, faLinkedinIn, faRedditAlien, faWhatsap
 
 library.add(fab, faFacebookF, faGooglePlusG, faLinkedinIn, faRedditAlien, faWhatsapp, faTwitter)
 
-class BlogIndex extends React.Component {
+class HomePage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -32,7 +32,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default HomePage
 
 export const pageQuery = graphql`
   query {
