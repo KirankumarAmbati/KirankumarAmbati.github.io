@@ -10,7 +10,7 @@ class Subscribe extends Component {
             msg: ''
         }
     }
-    
+
     onSubmit = () => {
         addToMailChimp(this.state.email)
         .then(data => this.setState({response: data}))
