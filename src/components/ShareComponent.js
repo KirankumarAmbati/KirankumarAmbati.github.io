@@ -26,12 +26,6 @@ const Share = ({ socialConfig, tags }) => (
 			</span>
 			<span className="text">Twitter</span>
 		</TwitterShareButton>
-		<GooglePlusShareButton url={socialConfig.config.url} className="button is-outlined is-rounded googleplus" >
-			<span className="icon">
-				<FontAwesomeIcon icon={['fab', 'google-plus-g']} />
-			</span>
-			<span className="text">Google+</span>
-		</GooglePlusShareButton>
 		<LinkedinShareButton url={socialConfig.config.url} className="button is-outlined is-rounded linkedin" title={socialConfig.config.title} >
 			<span className="icon">
 				<FontAwesomeIcon icon={['fab', 'linkedin-in']} />

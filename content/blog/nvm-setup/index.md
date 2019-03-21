@@ -52,3 +52,5 @@ NVM stands for "Node Version Manager". NVM helps us to handle multiple versions 
 -  That's all folks ! Now we are good to keep rocking with our coding.
 
 __NOTE:__ One important thing to remember when we are using nvm, the global space of each node version is different. i.e., if you have some node modules installed globally for one version of node, they won't be accessible to other versions. You have to install them seperately on those versions too.
+
+[edit this page on github](https://github.com/KirankumarAmbati/KirankumarAmbati.github.io/tree/master/content/blog/nvm-setup/index.md)

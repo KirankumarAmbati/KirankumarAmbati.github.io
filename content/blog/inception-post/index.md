@@ -14,6 +14,4 @@ I always wanted to have a blog but it took me this much time to get the ball rol
 
 If you would like to read an article on some topic or if you would like to send me some feedback/love, feel free to drop a message to [me](mailto:ambatikirankumar4@gmail.com) ! Happy Learning!
 
-
-
-
+[edit this page on github](https://github.com/KirankumarAmbati/KirankumarAmbati.github.io/tree/master/content/blog/inception-post/index.md)
