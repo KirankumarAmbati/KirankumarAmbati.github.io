@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -22,7 +21,7 @@ class BlogIndex extends React.Component {
           `portfolio`, `reactjs`, `ui`, `ux`, `node`, `nodejs`, `expressjs`
         ]}
         />
-        {posts.map(({ node }) => {
+        {posts.map(({ node }, index) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
@@ -32,7 +31,7 @@ class BlogIndex extends React.Component {
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
+                  {title}<span style={{color: 'red', marginLeft: '2%'}}>{index == 0 ? 'NEW !' : ''}</span>{}
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
