@@ -62,13 +62,13 @@ Using arrow functions, we can return the required value from a function in two d
 
 1. Implicit return: 
 
-`var x = () => 2 // Value 2 is returned from function and gets assigned to x`
+`var x = () => 2 // Value 2 is returned from function implicitly when invoked without us writing a return statement`
 
 2. Explicit return:
 
 ```js
 var x = () => {
-    return 2;
+    return 2; // explicitly returning 2.
 }
 ```
 
