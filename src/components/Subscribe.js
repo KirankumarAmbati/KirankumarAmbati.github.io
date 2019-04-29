@@ -19,7 +19,7 @@ class Subscribe extends Component {
         return (
             <div>
                 {
-                    this.state.response.result == '' && this.props.typedNeeded && (
+                    this.state.response.result === '' && this.props.typedNeeded && (
                         <TypeWrite
                             strings={["Be the first one to be notified when I write a new article. "]}
                             startDelay = {18000}
@@ -28,7 +28,7 @@ class Subscribe extends Component {
                 }
                 
                 {
-                    this.state.response.result == ''
+                    this.state.response.result === ''
                     ? (
                         <div>
                             <input type="email" onChange={(e) => this.setState({email: e.target.value})}/>
@@ -37,9 +37,9 @@ class Subscribe extends Component {
                     ) : (<p></p>)
                 }
                 
-            { this.state.response.result == "success" && <p>{this.state.response.msg}</p> }
+            { this.state.response.result === "success" && <p>{this.state.response.msg}</p> }
                     
-            { this.state.response.result == "error" && <p>You have already subscribed !</p> }
+            { this.state.response.result === "error" && <p>You have already subscribed !</p> }
             </div>
         );
     }

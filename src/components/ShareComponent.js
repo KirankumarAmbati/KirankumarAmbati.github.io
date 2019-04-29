@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	FacebookShareButton,
-	GooglePlusShareButton,
 	LinkedinShareButton,
 	TwitterShareButton,
 	WhatsappShareButton,
