@@ -1,7 +1,7 @@
 ---
 title: NVM To The Rescue
 date: "2019-02-26T11:31:52.169Z"
-tags: ["Node", "NVM", "NodeJS","Node Version Manager"]
+tags: ["Node", "PNPM", "NVM", "NodeJS","Node Version Manager", "Multiple Node Versions", "Parallel Node Versions", "Node Management"]
 ---
 
 Node has become a part of most of our coding lives. But if we are working on latest technologies like React and at the same time working on your legacy code, you might have noticed that you have switch between two versions of Node. For instance, I was working with node v6.10.2 for my company project and node v10.15.0 for my personal learnings. I used to uninstall and install those versions based on my requirements until I found NVM.

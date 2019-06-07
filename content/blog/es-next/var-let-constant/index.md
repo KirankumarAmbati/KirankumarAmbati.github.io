@@ -1,7 +1,7 @@
 ---
 title: ES Next Series - 3. var, let or const ?
 date: "2019-05-09T10:28:52.169Z"
-tags: ["JavaScript", "JS", "ES6","ES7", "ES8", "ESNext", "var", "let", "const"]
+tags: ["JavaScript", "JS", "ES6","ES7", "ES8", "ESNext", "var", "let", "const", "Usage of var, let and const", "Latest feature of JavaScript", "Latest feature of ECMAScript"]
 ---
 
 

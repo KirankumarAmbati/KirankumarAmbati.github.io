@@ -1,7 +1,7 @@
 ---
 title: Inception
 date: "2019-02-25T11:31:52.169Z"
-tags: ["Inception","First Post","Blogging"]
+tags: ["Inception","First Post","Blogging", "Introduction to blogging", "Knowledge sharing"]
 ---
 
 Hello world!

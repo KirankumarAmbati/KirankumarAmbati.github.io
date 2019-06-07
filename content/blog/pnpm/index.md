@@ -1,7 +1,7 @@
 ---
 title: PNPM - The minified NPM
 date: "2019-03-20T10:28:52.169Z"
-tags: ["Node", "NVM", "NodeJS","Node Version Manager"]
+tags: ["Node", "NVM", "NodeJS","Node Version Manager", "Solution to growing Node Modules"]
 ---
 
 In this present world of web development, almost everyone might have heard the word 

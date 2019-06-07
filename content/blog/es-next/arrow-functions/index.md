@@ -1,7 +1,7 @@
 ---
 title: ES Next Series - 2. The FAT Arrow 
 date: "2019-04-09T10:28:52.169Z"
-tags: ["JavaScript", "JS", "ES6","ES7", "ES8", "ESNext", "Arrow Functions"]
+tags: ["JavaScript", "JS", "ES6","ES7", "ES8", "ESNext", "Arrow Functions", "Usage of Arrow Functions", "FAT Arrow Functions", "Latest feature of JavaScript", "Latest feature of ECMAScript"]
 ---
 
 
