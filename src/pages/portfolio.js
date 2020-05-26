@@ -1,27 +1,27 @@
 import React from "react"
-import TypeWrite from '../components/typeWrite'
+import TypeWrite from "../components/typeWrite"
 import { StaticQuery, graphql } from "gatsby"
 import { rhythm } from "../utils/typography"
-import { SocialIcon } from 'react-social-icons'
-import addToMailChimp from 'gatsby-plugin-mailchimp'
-import Subscribe from "../components/Subscribe";
+import { SocialIcon } from "react-social-icons"
+import addToMailChimp from "gatsby-plugin-mailchimp"
+import Subscribe from "../components/Subscribe"
 
 class Portfolio extends React.Component {
   state = {
-    email: '',
+    email: "",
     response: {
-        result: '',
-        msg: ''
+      result: "",
+      msg: "",
     },
     showSubscribe: false,
-    showSocialIcons: false
+    showSocialIcons: false,
   }
 
   onSubmit = () => {
-    addToMailChimp(this.state.email)
-    .then(data => this.setState({response: data}))
+    addToMailChimp(this.state.email).then(data =>
+      this.setState({ response: data })
+    )
   }
-
 
   render() {
     return (
@@ -33,57 +33,114 @@ class Portfolio extends React.Component {
             <div
               style={{
                 display: `flex`,
-                marginBottom: rhythm(2.5),
               }}
             >
-              <div style={{fontSize: "1.2rem"}}>
-                <TypeWrite
+              {false ? (
+                <div style={{ fontSize: "1.2rem" }}>
+                  <TypeWrite
                     strings={["Hey Pal !"]}
-                    startDelay = {100}
+                    startDelay={100}
                     showCursor={false}
-                />
-                <TypeWrite
-                  strings={["Glad to meet you !"]}
-                  startDelay = {2000}
-                />
-                <TypeWrite
-                  strings={["You are here to know me."]}
-                  startDelay = {3500}
-                />
-                <TypeWrite
-                  strings={["So, let me introduce myself."]}
-                  startDelay = {5500}
-                />
-                <TypeWrite
-                  strings={["I'm Kirankumar Ambati from India."]}
-                  startDelay = {8000}
-                />
-                <TypeWrite
-                  strings={["Frontend + React is my LOVE"]}
-                  startDelay = {11000}
-                />
-                <TypeWrite
-                  strings={["Teaching is my passion."]}
-                  startDelay = {14000}
-                />
-                <TypeWrite
-                  strings={["Want to know more about me or get in touch with me ? "]}
-                  startDelay = {16000}
-                  onComplete={() => this.setState({showSocialIcons: true})}
-                />
-                {
-                  this.state.showSocialIcons && (
+                  />
+                  <TypeWrite
+                    strings={["Glad to meet you !"]}
+                    startDelay={2000}
+                  />
+                  <TypeWrite
+                    strings={["You are here to know me."]}
+                    startDelay={3500}
+                  />
+                  <TypeWrite
+                    strings={["So, let me introduce myself."]}
+                    startDelay={5500}
+                  />
+                  <TypeWrite
+                    strings={["I'm Kirankumar Ambati from India."]}
+                    startDelay={8000}
+                  />
+                  <TypeWrite
+                    strings={["Frontend + React is my LOVE"]}
+                    startDelay={11000}
+                  />
+                  <TypeWrite
+                    strings={["Teaching is my passion."]}
+                    startDelay={14000}
+                  />
+                  <TypeWrite
+                    strings={[
+                      "Want to know more about me or get in touch with me ? ",
+                    ]}
+                    startDelay={16000}
+                    onComplete={() => {
+                      this.setState({ showSocialIcons: true })
+                      localStorage.setItem("typed", true)
+                    }}
+                  />
+                  {this.state.showSocialIcons && (
                     <div>
-                      <SocialIcon url={`https://github.com/${social.github}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
-                      <SocialIcon url={`https://www.linkedin.com/in/${social.linkedin}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
-                      <SocialIcon url={`https://twitter.com/${social.twitter}`} bgColor="white" fgColor="black" target="_blank" style={{ height: 80, width: 80, color: "white" }} />
-                  </div>
-                  )
-                }
-                <div>
-                  { this.state.showSubscribe && <Subscribe typedNeeded={true}/> }
+                      <SocialIcon
+                        url={`https://github.com/${social.github}`}
+                        bgColor="white"
+                        fgColor="black"
+                        target="_blank"
+                        style={{ height: 80, width: 80, color: "white" }}
+                      />
+                      <SocialIcon
+                        url={`https://www.linkedin.com/in/${social.linkedin}`}
+                        bgColor="white"
+                        fgColor="black"
+                        target="_blank"
+                        style={{ height: 80, width: 80, color: "white" }}
+                      />
+                      <SocialIcon
+                        url={`https://twitter.com/${social.twitter}`}
+                        bgColor="white"
+                        fgColor="black"
+                        target="_blank"
+                        style={{ height: 80, width: 80, color: "white" }}
+                      />
+                      <Subscribe typedNeeded={true} />
+                    </div>
+                  )}
                 </div>
-              </div>
+              ) : (
+                <div style={{ fontSize: "1.2rem" }}>
+                  <p>Hey Pal !</p>
+                  <p>Glad to meet you !</p>
+                  <p>You are here to know me.</p>
+                  <p>So, let me introduce myself.</p>
+                  <p>I'm Kirankumar Ambati from India.</p>
+                  <p>Frontend + React is my LOVE</p>
+                  <p>Teaching is my passion.</p>
+                  <p>Want to know more about me or get in touch with me ?</p>
+                  <div>
+                    <SocialIcon
+                      url={`https://github.com/${social.github}`}
+                      bgColor="white"
+                      fgColor="black"
+                      target="_blank"
+                      style={{ height: 80, width: 80, color: "white" }}
+                    />
+                    <SocialIcon
+                      url={`https://www.linkedin.com/in/${social.linkedin}`}
+                      bgColor="white"
+                      fgColor="black"
+                      target="_blank"
+                      style={{ height: 80, width: 80, color: "white" }}
+                    />
+                    <SocialIcon
+                      url={`https://twitter.com/${social.twitter}`}
+                      bgColor="white"
+                      fgColor="black"
+                      target="_blank"
+                      style={{ height: 80, width: 80, color: "white" }}
+                    />
+                  </div>
+                  <div style={{marginTop: '20px'}}>
+                    <Subscribe typedNeeded={true} />
+                  </div>
+                </div>
+              )}
             </div>
           )
         }}
@@ -107,8 +164,8 @@ export const SocialQuery = graphql`
       siteMetadata {
         author
         social {
-          twitter,
-          linkedin,
+          twitter
+          linkedin
           github
         }
       }

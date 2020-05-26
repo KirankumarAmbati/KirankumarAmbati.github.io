@@ -1,48 +1,54 @@
-import React, { Component } from 'react';
-import addToMailChimp from 'gatsby-plugin-mailchimp'
-import TypeWrite from '../components/typeWrite'
+import React, { Component } from "react"
+import addToMailChimp from "gatsby-plugin-mailchimp"
+import TypeWrite from "../components/typeWrite"
+import { Button, InputGroup, FormControl, Alert } from "react-bootstrap"
 
 class Subscribe extends Component {
-    state = {
-        email: '',
-        response: {
-            result: '',
-            msg: ''
-        }
-    }
+  state = {
+    email: "",
+    response: {
+      result: "",
+      msg: "",
+    },
+  }
 
-    onSubmit = () => {
-        addToMailChimp(this.state.email)
-        .then(data => this.setState({response: data}))
-    }
-    render() {
-        return (
-            <div>
-                {
-                    this.state.response.result === '' && this.props.typedNeeded && (
-                        <TypeWrite
-                            strings={["Be the first one to be notified when I write a new article. "]}
-                            startDelay = {18000}
-                        />
-                    )
-                }
-                
-                {
-                    this.state.response.result === ''
-                    ? (
-                        <div>
-                            <input type="email" onChange={(e) => this.setState({email: e.target.value})}/>
-                    <button className="subscribe-button" onClick={this.onSubmit}>Subscribe</button>
-                        </div>
-                    ) : (<p></p>)
-                }
-                
-            { this.state.response.result === "success" && <p>{this.state.response.msg}</p> }
-                    
-            { this.state.response.result === "error" && <p>You have already subscribed !</p> }
-            </div>
-        );
-    }
+  onSubmit = () => {
+    addToMailChimp(this.state.email).then(data =>
+      this.setState({ response: data })
+    )
+  }
+  render() {
+    return (
+      <div>
+        <p>Be the first one to be notified when I write a new article.</p>
+
+        {this.state.response.result === "" ? (
+            <InputGroup className="mb-3">
+              <FormControl
+                placeholder="Email"
+                aria-label="Email"
+                onChange={e => this.setState({ email: e.target.value })}
+              />
+              <Button variant="dark" onClick={this.onSubmit}>Subscribe</Button>
+            </InputGroup>
+        ) : (
+          <p></p>
+        )}
+
+        {this.state.response.result === "success" && (
+          <Alert variant={'success'}>
+                {this.state.response.msg}
+            </Alert>
+        )}
+
+        {this.state.response.result === "error" && (
+          <Alert variant={'warning'}>
+            You have already subscribed !
+        </Alert>
+        )}
+      </div>
+    )
+  }
 }
 
-export default Subscribe;
+export default Subscribe

@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { Alert } from "react-bootstrap"
 
 class BlogIndex extends React.Component {
   render() {
@@ -34,12 +35,14 @@ class BlogIndex extends React.Component {
                   {title}<span style={{color: 'red', marginLeft: '2%'}}>{index == 0 ? 'NEW !' : ''}</span>{}
                 </Link>
               </h3>
+              <Alert variant="dark">
               <small>{node.frontmatter.date}</small>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.excerpt,
                 }}
               />
+              </Alert>
             </div>
           )
         })}

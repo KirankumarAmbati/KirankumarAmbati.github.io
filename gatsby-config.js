@@ -23,13 +23,14 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
-      },
+        },
     },
     {
       resolve: `gatsby-plugin-mailchimp`,
       options: {
         endpoint: 'https://kirankumarambati.us20.list-manage.com/subscribe/post?u=6d09a49010f319bde97171cd0&amp;id=e2cb889d72'
       },
+      
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -81,6 +82,9 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
     `gatsby-plugin-sass`
   ],
 }

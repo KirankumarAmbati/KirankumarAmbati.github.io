@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import SideBar from "./SideNavigation"
 import "../../static/main.css"
+import OpenInNewTabIcon from "./OpenInNewTabIcon"
 
 class Layout extends React.Component {
   render() {
@@ -37,7 +38,7 @@ class Layout extends React.Component {
           <Link className="link" activeClassName="active-class" to={`/`}>home</Link>
           <Link className="link" activeClassName="active-class" to={`/blog`}>blog</Link>
           <Link className="link" activeClassName="active-class" to={`/talks`}>talks</Link>
-          <a className="link" href="https://i-can-not-react.netlify.com/">i-can-not-react</a>
+          <a className="link" href="https://i-can-not-react.netlify.com/" target="_blank">i-can-not-react<OpenInNewTabIcon /></a>
         </h3>
       </div>
     )
